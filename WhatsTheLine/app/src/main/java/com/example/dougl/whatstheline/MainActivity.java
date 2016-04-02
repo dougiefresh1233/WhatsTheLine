@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
 
+        //Tab titles
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
@@ -156,5 +157,7 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+
+
     }
 }
