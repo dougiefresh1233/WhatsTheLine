@@ -23,12 +23,17 @@ public class FoodCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_card);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         TextView wait = (TextView) findViewById(R.id.WaitLength);
         wait.setText("Short");
+        ImageView graph = (ImageView) findViewById(R.id.graphPlaceHolder);
+        graph.setImageResource(R.mipmap.graph);
         final Button favButton = (Button) findViewById(R.id.FavButton);
         if(isFav){
             favButton.setText("Unfavorite");
         }
+        getSupportActionBar().setTitle("Insert Name");
         favButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +68,8 @@ public class FoodCardActivity extends AppCompatActivity {
                 popup.show();
             }
         });
+
+
 
 
 
