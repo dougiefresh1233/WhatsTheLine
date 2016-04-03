@@ -17,6 +17,7 @@ import android.widget.Toast;
 public class FoodCardActivity extends AppCompatActivity {
 
     boolean isFav;
+    int userInput=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +66,7 @@ public class FoodCardActivity extends AppCompatActivity {
                                 "You Clicked : " + item.getTitle(),
                                 Toast.LENGTH_SHORT
                         ).show();
+                        sendUserInput(item.getTitle().toString());
                         return true;
                     }
                 });
@@ -75,9 +77,29 @@ public class FoodCardActivity extends AppCompatActivity {
         TextView descriptionBox = (TextView) findViewById(R.id.descriptionBox);
         descriptionBox.setText(description);
 
-
-
-
     }
+
+    public void sendUserInput(String item) {
+        switch(item){
+            case "None":
+                userInput = 0;
+                break;
+            case "Short":
+                userInput = 1;
+                break;
+            case "Medium":
+                userInput=2;
+                break;
+            case "Long":
+                userInput=3;
+                break;
+            case "Literally Forever":
+                userInput=4;
+                break;
+        }
+        //send data from user to server or something
+        //stored in variable userInput
+    }
+    
 
 }
