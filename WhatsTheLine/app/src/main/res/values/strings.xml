@@ -7,5 +7,6 @@
     <string name="Tab1">Near Me</string>
     <string name="Tab2">Favorites</string>
     <string name="Tab3">Recent</string>
+    <string name="title_activity_food_card">FoodCardActivity</string>
 
 </resources>
