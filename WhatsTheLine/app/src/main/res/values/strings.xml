@@ -9,4 +9,16 @@
     <string name="Tab3">Recent</string>
     <string name="title_activity_food_card">FoodCardActivity</string>
 
+
+
+    <!--Temporary values-->
+    <string name="aim">aim</string>
+    <string name="aim_description">whatever that is</string>
+    <string name="bebo">bebo</string>
+    <string name="bebo_description">something else i do not know</string>
+    <string name="youtube">youtube</string>
+    <string name="youtube_description">video streaming site</string>
+
+
+
 </resources>
