@@ -18,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,12 +38,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
 
+    private ViewPager mViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent foodCard = new Intent(this, FoodCardActivity.class);
-        startActivity(foodCard);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -59,8 +58,14 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
+        Button next = (Button) findViewById(R.id.nextButton);
+
     }
 
+    public void sendMessage(View view){
+        Intent foodCard = new Intent(this, FoodCardActivity.class);
+        startActivity(foodCard);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
