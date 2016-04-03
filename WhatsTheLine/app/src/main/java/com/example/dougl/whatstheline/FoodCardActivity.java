@@ -7,11 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class FoodCardActivity extends AppCompatActivity {
+
+    boolean isFav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,23 @@ public class FoodCardActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         TextView wait = (TextView) findViewById(R.id.WaitLength);
         wait.setText("Short");
+        final Button favButton = (Button) findViewById(R.id.FavButton);
+        if(isFav){
+            favButton.setText("Unfavorite");
+        }
+        favButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //set status of card to !isFav
+                isFav = !isFav;
+                if (isFav) {
+                    favButton.setText("Unfavorite");
+                } else {
+                    favButton.setText("Favorite");
+                }
+            }
+
+        });
 
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +63,8 @@ public class FoodCardActivity extends AppCompatActivity {
                 popup.show();
             }
         });
+
+
 
     }
 
