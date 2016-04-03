@@ -1,5 +1,6 @@
 package com.example.dougl.whatstheline;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -23,7 +24,7 @@ public class FavoriteFragment extends ListFragment {
         Resources resources = getResources();
 
         mItems.add(new CardBox(ResourcesCompat.getDrawable(resources, R.mipmap.ic_launcher, null), getString(R.string.youtube), getString(R.string.youtube_description),1));
-        mItems.add(new CardBox(ResourcesCompat.getDrawable(resources, R.mipmap.ic_launcher, null), getString(R.string.aim), getString(R.string.aim_description),1));
+        mItems.add(new CardBox(ResourcesCompat.getDrawable(resources, R.mipmap.ic_launcher, null), getString(R.string.aim), getString(R.string.aim_description), 1));
 
         // initialize and set the list adapter
         setListAdapter(new TabFragmentAdapter(getActivity(), mItems));
@@ -42,6 +43,12 @@ public class FavoriteFragment extends ListFragment {
         CardBox item = mItems.get(position);
 
         // do something
-        Toast.makeText(getActivity(), item.title, Toast.LENGTH_SHORT).show();
+        Intent foodCard = new Intent(v.getContext(), FoodCardActivity.class);
+        foodCard.putExtra("Title", item.title);
+        foodCard.putExtra("Description", item.description);
+        foodCard.putExtra("RIN", item.rin);
+        //foodCard.putExtra("Wait",item.);
+        startActivity(foodCard);
     }
+
 }

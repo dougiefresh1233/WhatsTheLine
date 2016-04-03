@@ -1,5 +1,6 @@
 package com.example.dougl.whatstheline;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +21,9 @@ public class FoodCardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String title= getIntent().getStringExtra("Title");
+        String description = getIntent().getStringExtra("Description");
+        int RIN = getIntent().getIntExtra("RIN",0);
         setContentView(R.layout.activity_food_card);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -33,7 +37,7 @@ public class FoodCardActivity extends AppCompatActivity {
         if(isFav){
             favButton.setText("Unfavorite");
         }
-        getSupportActionBar().setTitle("Insert Name");
+        getSupportActionBar().setTitle(title);
         favButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,7 +72,8 @@ public class FoodCardActivity extends AppCompatActivity {
                 popup.show();
             }
         });
-
+        TextView descriptionBox = (TextView) findViewById(R.id.descriptionBox);
+        descriptionBox.setText(description);
 
 
 

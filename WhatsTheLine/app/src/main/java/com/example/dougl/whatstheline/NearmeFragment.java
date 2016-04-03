@@ -1,5 +1,6 @@
 package com.example.dougl.whatstheline;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -43,6 +44,11 @@ public class NearmeFragment extends ListFragment {
         CardBox item = mItems.get(position);
 
         // do something
-        Toast.makeText(getActivity(), item.title, Toast.LENGTH_SHORT).show();
+        Intent foodCard = new Intent(v.getContext(), FoodCardActivity.class);
+        foodCard.putExtra("Title", item.title);
+        foodCard.putExtra("Description", item.description);
+        foodCard.putExtra("RIN", item.rin);
+        //foodCard.putExtra("Wait",item.);
+        startActivity(foodCard);
     }
 }

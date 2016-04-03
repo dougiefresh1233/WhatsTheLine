@@ -58,14 +58,8 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        Button next = (Button) findViewById(R.id.nextButton);
-
     }
 
-    public void sendMessage(View view){
-        Intent foodCard = new Intent(this, FoodCardActivity.class);
-        startActivity(foodCard);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -164,8 +158,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
-
-
 
     }
 }
